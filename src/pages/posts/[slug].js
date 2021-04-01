@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useRouter } from "next/router";
+
 import {
     getPostBySlug,
     getAllPosts,
@@ -21,9 +21,6 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-    const allPosts = await getAllPosts();
-    const postIndex = allPosts.findIndex((post) => post.slug === params.slug);
-
     const post = await getPostBySlug(params.slug);
 
     return {
@@ -33,11 +30,7 @@ export const getStaticProps = async ({ params }) => {
     };
 };
 
-const Posts = ({ post }) => {
-    /* const router = useRouter();
-
-    const pathname = router.asPath.replace(/posts/, "").replace("//", ""); */
-
+const Post = ({ post }) => {
     useEffect(() => {
         console.log(post);
     }, []);
@@ -45,4 +38,4 @@ const Posts = ({ post }) => {
     return <></>;
 };
 
-export default Posts;
+export default Post;

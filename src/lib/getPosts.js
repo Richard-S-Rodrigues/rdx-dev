@@ -14,7 +14,7 @@ export const getPostsFiles = async () => {
 };
 
 export const getAllPosts = async () => {
-  const files = fs.readdirSync(postsDirectory);
+  const files = await getPostsFiles();
 
   const allFilesContent = [];
 
