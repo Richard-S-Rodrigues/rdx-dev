@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body,
+input,
+html {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --dark: #21262d;
+  --blue: #03398c;
+  --light-blue: #4782de;
+  --grey: #84868a;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--dark);
+}
+
+a {
+  color: var(--blue);
+
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: all 1s;
+}
+
+a:hover {
+  color: var(--light-blue);
+
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+small {
+  color: var(--grey);
+}
+
+.tag {
+  color: var(--blue);
+}

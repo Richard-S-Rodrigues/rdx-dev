@@ -1,0 +1,41 @@
+.container {
+  display: block;
+  width: 70%;
+
+  margin: 0 auto;
+}
+
+.card {
+  margin-top: 4em;
+
+  border-bottom: 0.1px solid #d1d1d1;
+  padding-bottom: 2em;
+}
+
+.titleContainer {
+  margin: 1em auto;
+}
+
+.titleContainer h2 {
+  font-size: 30px;
+}
+
+.titleContainer h2 a {
+  color: var(--dark);
+}
+
+small.date {
+  font-size: 17px;
+}
+
+.summaryContainer p {
+  font-size: 20px;
+  line-height: 1.5rem;
+  color: var(--grey);
+
+  margin: 1em auto;
+}
+
+.summaryContainer a {
+  font-size: 20px;
+}
