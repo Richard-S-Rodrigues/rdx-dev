@@ -9,7 +9,11 @@ export const formatSlug = (slug) => {
   return slug.replace(/\.(mdx|md)/, "");
 };
 
-export const getAllPosts = () => {
+export const getPostsFiles = async () => {
+  return fs.readdirSync(postsDirectory);
+};
+
+export const getAllPosts = async () => {
   const files = fs.readdirSync(postsDirectory);
 
   const allFilesContent = [];
@@ -25,8 +29,8 @@ export const getAllPosts = () => {
   return allFilesContent;
 };
 
-export const getPostBySlug = (slug) => {
-  const source = fs.readFileSync(join(postsDirectory, slug), "utf8");
+export const getPostBySlug = async (slug) => {
+  const source = fs.readFileSync(join(postsDirectory, `${slug}.md`), "utf8");
 
   const { data, content } = matter(source);
 
