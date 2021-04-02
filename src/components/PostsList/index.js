@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { formatDate } from "../../lib/utils.js";
+
 import styles from "./index.module.css";
 
 const PostsList = ({ posts }) => (
@@ -7,23 +9,12 @@ const PostsList = ({ posts }) => (
         {posts.map((post) => {
             const { slug, title, date, tags, summary } = post;
 
-            const postDateTemplate = {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-            };
-
             return (
                 <li key={slug} className={styles.card}>
                     <article>
                         <div>
                             <small className={styles.date}>
-                                <time dateTime={date}>
-                                    {new Date(date).toLocaleDateString(
-                                        "en-US",
-                                        postDateTemplate
-                                    )}
-                                </time>
+                                <time dateTime={date}>{formatDate(date)}</time>
                             </small>
 
                             <div className={styles.titleContainer}>

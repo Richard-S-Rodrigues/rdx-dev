@@ -3,11 +3,9 @@ import { join } from "path";
 import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
 
-const postsDirectory = join(process.cwd(), "src/_posts");
+import { formatSlug } from "./utils.js";
 
-export const formatSlug = (slug) => {
-  return slug.replace(/\.(mdx|md)/, "");
-};
+const postsDirectory = join(process.cwd(), "src/_posts");
 
 export const getPostsFiles = async () => {
   return fs.readdirSync(postsDirectory);
@@ -34,5 +32,7 @@ export const getPostBySlug = async (slug) => {
 
   const { data, content } = matter(source);
 
-  return { data, content };
+  const body_markdown = await renderToString(content);
+
+  return { data, body_markdown };
 };

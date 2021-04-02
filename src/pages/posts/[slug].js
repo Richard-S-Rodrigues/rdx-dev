@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 
+import Post from "../../components/Post";
+
 import {
     getPostBySlug,
     getAllPosts,
     getPostsFiles,
-    formatSlug,
 } from "../../lib/getPosts.js";
+
+import { formatSlug } from "../../lib/utils.js";
 
 export const getStaticPaths = async () => {
     const posts = await getPostsFiles();
@@ -30,12 +33,17 @@ export const getStaticProps = async ({ params }) => {
     };
 };
 
-const Post = ({ post }) => {
+const Posts = ({ post }) => {
+    const { data, body_markdown } = post;
     useEffect(() => {
-        console.log(post);
+        console.log(data, body_markdown);
     }, []);
 
-    return <></>;
+    return (
+        <>
+            <Post data={data} body_markdown={body_markdown} />
+        </>
+    );
 };
 
-export default Post;
+export default Posts;
