@@ -1,9 +1,10 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-const Code = ({ children }) => {
+const Code = ({ className, children }) => {
+    const language = className.replace("language-", "");
     return (
-        <SyntaxHighlighter style={docco} language="javascript">
+        <SyntaxHighlighter style={coldarkDark} language={language}>
             {children}
         </SyntaxHighlighter>
     );
