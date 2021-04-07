@@ -1,11 +1,5 @@
-const PostBody = ({ body_markdown }) => {
-    return (
-        <section
-            dangerouslySetInnerHTML={{
-                __html: body_markdown.renderedOutput,
-            }}
-        />
-    );
+const PostBody = ({ children }) => {
+    return <section>{children}</section>;
 };
 
 export default PostBody;

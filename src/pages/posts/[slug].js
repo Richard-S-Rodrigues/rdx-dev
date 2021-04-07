@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import hydrate from "next-mdx-remote/hydrate";
 
 import Post from "../../components/Post";
+import MDXComponents from "../../components/MDXComponents.js";
 
 import {
     getPostBySlug,
@@ -35,13 +36,14 @@ export const getStaticProps = async ({ params }) => {
 
 const Posts = ({ post }) => {
     const { data, body_markdown } = post;
-    useEffect(() => {
-        console.log(data, body_markdown);
-    }, []);
+
+    const content = hydrate(body_markdown, {
+        components: MDXComponents,
+    });
 
     return (
         <>
-            <Post data={data} body_markdown={body_markdown} />
+            <Post data={data} body_markdown={content} />
         </>
     );
 };

@@ -5,3 +5,15 @@
 
   text-align: center;
 }
+
+.container h1 a {
+  color: var(--dark);
+}
+
+.container h1 a:hover {
+  text-decoration: none;
+}
+
+.container p a {
+  margin-left: 2px;
+}

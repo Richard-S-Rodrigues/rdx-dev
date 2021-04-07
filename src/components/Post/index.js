@@ -8,7 +8,7 @@ const Post = ({ data, body_markdown }) => {
     return (
         <main className={styles.container}>
             <PostHeader title={title} date={date} />
-            <PostBody body_markdown={body_markdown} />
+            <PostBody>{body_markdown}</PostBody>
         </main>
     );
 };
