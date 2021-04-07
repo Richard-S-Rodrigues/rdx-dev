@@ -16,6 +16,8 @@ The concepts that are going to be approach is:
 5. IIFE(Immediately invoked Function Expression)
 6. Callback functions
 
+---
+
 ## Prototypes
 
 Every object in JavaScript has an invisible property called **proto**, which is the prototype property of the constructor function.

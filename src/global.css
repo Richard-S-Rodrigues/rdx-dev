@@ -18,6 +18,18 @@ html {
   --grey: #84868a;
 }
 
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -25,11 +37,29 @@ h4 {
   color: var(--dark);
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
 p {
   color: #374151;
 
-  font-size: 18px;
-  line-height: 1.5em;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+
+  margin-bottom: 1em;
+}
+
+img {
+  width: 100%;
 }
 
 a {
@@ -51,12 +81,36 @@ ul {
   list-style: none;
 }
 
+ol {
+  font-size: 1.2rem;
+}
+
+ol li {
+  margin: 1em auto;
+}
+
+ol li::marker {
+  color: var(--grey);
+}
+
 small {
   color: var(--grey);
 }
 
 hr {
   border: 0.5px solid #ddd;
+  margin-bottom: 3em;
+}
+
+pre {
+  border-radius: 1em;
+  margin: 2em auto;
+}
+
+blockquote p {
+  font-style: italic;
+  font-weight: 300;
+  margin: 1em 1em;
 }
 
 .tag {
