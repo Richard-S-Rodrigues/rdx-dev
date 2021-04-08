@@ -1,5 +1,5 @@
 <h1 align='center'>RDX-DEV</h1>
-<h2 align='center'>A statically generated blog example using Next.js and Markdown</h2>
+<h2 align='center'>A statically generated blog using Next.js and Markdown</h2>
 
 I made this personal blog to write about things i learn as a software developer.
 
