@@ -231,4 +231,4 @@ In the example above, the function world is executed after the function hello. S
 
 ---
 
-##### That is a lot of important concepts that wasn't approached here. Like classes, Promises, Async/Await, etc. But, that would have made this post very expansive, so, i will make, later on, separate articles for them.
+That is a lot of important concepts that wasn't approached here. Like classes, Promises, Async/Await, etc. But, that would have made this post very expansive, so, i will make, later on, separate articles for them.
