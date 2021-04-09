@@ -1,6 +1,6 @@
 ---
 title: "Understanding Big O Notation"
-date: "2021-04-9"
+date: "2021-04-10"
 tags: ["algorithms/data_structures"]
 summary: "Understanding the basics of Big O Notation"
 ---
