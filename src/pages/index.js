@@ -3,17 +3,21 @@ import PostsList from "../components/PostsList";
 import { getAllPosts } from "../lib/getPosts.js";
 
 export const getStaticProps = async () => {
-  const posts = await getAllPosts();
+    const posts = await getAllPosts();
 
-  return {
-    props: { posts },
-  };
+    return {
+        props: { posts },
+    };
 };
 
-const Index = ({ posts }) => (
-  <div>
-    <PostsList posts={posts} />
-  </div>
-);
+const Index = ({ posts }) => {
+    posts.sort((a, b) => a - b);
+
+    return (
+        <div>
+            <PostsList posts={posts} />
+        </div>
+    );
+};
 
 export default Index;

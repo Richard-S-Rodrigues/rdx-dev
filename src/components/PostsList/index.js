@@ -14,7 +14,7 @@ const PostsList = ({ posts }) => (
                     <article>
                         <div>
                             <small className={styles.date}>
-                                <time dateTime={date}>{formatDate(date)}</time>
+                                {formatDate(date)}
                             </small>
 
                             <div className={styles.titleContainer}>
