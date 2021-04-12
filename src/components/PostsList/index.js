@@ -26,7 +26,7 @@ const PostsList = ({ posts }) => (
                             <div>
                                 {tags.map((tag) => (
                                     <p key={tag} className="tag">
-                                        {tag}
+                                        #{tag}
                                     </p>
                                 ))}
                             </div>

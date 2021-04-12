@@ -17,3 +17,15 @@
 .container p a {
   margin-left: 2px;
 }
+
+.toggleContainer {
+  position: absolute;
+  right: 2em;
+  top: 1em;
+}
+
+@media (max-width: 397px) {
+  .toggleContainer {
+    position: inherit;
+  }
+}

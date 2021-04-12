@@ -16,6 +16,30 @@ html {
   --blue: #03398c;
   --light-blue: #4782de;
   --grey: #84868a;
+  --white: #fff;
+}
+
+body.dark-mode {
+  background-color: var(--dark);
+
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode p {
+  color: var(--white);
+}
+
+body.dark-mode h1,
+body.dark-mode h1 a,
+body.dark-mode h2,
+body.dark-mode h2 a,
+body.dark-mode h3,
+body.dark-mode h4 {
+  color: var(--white);
+}
+
+body.dark-mode img {
+  filter: brightness(0.9);
 }
 
 @media (max-width: 1080px) {
@@ -90,6 +114,10 @@ ol li {
   margin: 1em auto;
 }
 
+body.dark-mode ol li {
+  color: var(--white);
+}
+
 ol li::marker {
   color: var(--grey);
 }
@@ -114,6 +142,10 @@ blockquote p {
   margin: 1em 1em;
 }
 
-.tag {
+body.dark-mode p.tag {
   color: var(--blue);
+}
+
+p.tag {
+  color: var(--light-blue);
 }
