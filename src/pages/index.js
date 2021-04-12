@@ -11,8 +11,6 @@ export const getStaticProps = async () => {
 };
 
 const Index = ({ posts }) => {
-    posts.sort((a, b) => a - b);
-
     return (
         <div>
             <PostsList posts={posts} />

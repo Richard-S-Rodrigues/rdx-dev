@@ -6,6 +6,8 @@ import styles from "./index.module.css";
 
 const PostsList = ({ posts }) => (
     <ul className={styles.container}>
+        {!posts.length && "No posts found."}
+
         {posts.map((post) => {
             const { slug, title, date, tags, summary } = post;
 

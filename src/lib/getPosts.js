@@ -8,6 +8,12 @@ import { formatSlug } from "./utils.js";
 
 const postsDirectory = join(process.cwd(), "src/_posts");
 
+const dateSortDesc = (a, b) => {
+  if (a > b) return -1;
+  if (a < b) return 1;
+  return 0;
+};
+
 export const getPostsFiles = async () => {
   return fs.readdirSync(postsDirectory);
 };
@@ -25,7 +31,7 @@ export const getAllPosts = async () => {
     allFilesContent.push({ ...data, slug: formatSlug(file) });
   });
 
-  return allFilesContent;
+  return allFilesContent.sort((a, b) => dateSortDesc(a.date, b.date));
 };
 
 export const getPostBySlug = async (slug) => {
