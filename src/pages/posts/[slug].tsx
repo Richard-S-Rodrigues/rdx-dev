@@ -1,3 +1,5 @@
+import { GetStaticProps, GetStaticPaths } from "next";
+
 import hydrate from "next-mdx-remote/hydrate";
 
 import Post from "../../components/Post";
@@ -11,7 +13,7 @@ import {
 
 import { formatSlug } from "../../lib/utils.js";
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await getPostsFiles();
 
     return {
@@ -24,7 +26,7 @@ export const getStaticPaths = async () => {
     };
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
     const post = await getPostBySlug(params.slug);
 
     return {
@@ -34,7 +36,12 @@ export const getStaticProps = async ({ params }) => {
     };
 };
 
-const Posts = ({ post }) => {
+interface PostDataProps {
+    data: object;
+    body_markdown: object;
+}
+
+const Posts = ({ post }: PostDataProps) => {
     const { data, body_markdown } = post;
 
     const content = hydrate(body_markdown, {
