@@ -14,6 +14,7 @@ The images is stored in `public/static/images/blog`, inside specific directories
 
 ### Tech Stack
 
+- [TypeScript](https://www.typescriptlang.org/)
 - [NextJS](https://nextjs.org/)
 - [next-mdx-remote](https://www.npmjs.com/package/next-mdx-remote)
 
