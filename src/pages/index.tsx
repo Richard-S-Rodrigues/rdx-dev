@@ -12,20 +12,14 @@ export const getStaticProps: GetStaticProps = async () => {
     };
 };
 
-interface PostsDataProps {
-    title: string;
-    date: string;
-    tags: array;
-    summary: string;
-    slug: string;
+interface IndexProps {
+    posts: object[];
 }
 
-const Index = ({ posts }: PostsDataProps) => {
-    return (
-        <div>
-            <PostsList posts={posts} />
-        </div>
-    );
-};
+const Index = ({ posts }: IndexProps) => (
+    <div>
+        <PostsList posts={posts} />
+    </div>
+);
 
 export default Index;

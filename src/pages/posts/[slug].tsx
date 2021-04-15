@@ -3,15 +3,11 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import hydrate from "next-mdx-remote/hydrate";
 
 import Post from "../../components/Post";
-import MDXComponents from "../../components/MDXComponents.js";
+import MDComponents from "../../components/MDComponents";
 
-import {
-    getPostBySlug,
-    getAllPosts,
-    getPostsFiles,
-} from "../../lib/getPosts.js";
+import { getPostBySlug, getAllPosts, getPostsFiles } from "../../lib/getPosts";
 
-import { formatSlug } from "../../lib/utils.js";
+import { formatSlug } from "../../lib/utils";
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await getPostsFiles();
@@ -36,23 +32,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
 };
 
-interface PostDataProps {
-    data: object;
-    body_markdown: object;
-}
-
-const Posts = ({ post }: PostDataProps) => {
+const Posts = ({ post }) => {
     const { data, body_markdown } = post;
 
     const content = hydrate(body_markdown, {
-        components: MDXComponents,
+        components: MDComponents,
     });
 
-    return (
-        <>
-            <Post data={data} body_markdown={content} />
-        </>
-    );
+    return <Post data={data} body_markdown={content} />;
 };
 
 export default Posts;

@@ -3,8 +3,8 @@ import { join } from "path";
 import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
 
-import MDXComponents from "../components/MDXComponents.js";
-import { formatSlug } from "./utils.js";
+import MDComponents from "../components/MDComponents";
+import { formatSlug } from "./utils";
 
 const postsDirectory = join(process.cwd(), "src/_posts");
 
@@ -40,7 +40,7 @@ export const getPostBySlug = async (slug) => {
   const { data, content } = matter(source);
 
   const body_markdown = await renderToString(content, {
-    components: MDXComponents,
+    components: MDComponents,
   });
 
   return { data, body_markdown };

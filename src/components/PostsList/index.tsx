@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { formatDate } from "../../lib/utils.js";
+import { formatDate } from "../../lib/utils";
 
 import styles from "./index.module.css";
 

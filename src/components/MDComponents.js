@@ -1,12 +1,13 @@
 import Image from "next/image";
 
-import Code from "./mdx/Code.js";
+import Code from "./md/Code";
 
-const MDXComponents = {
+const MDComponents = {
     paragraph: (paragraph) => {
         const { node } = paragraph;
         if (node.children[0].type === "image") {
             const image = node.children[0];
+
             return (
                 <Image src={image.url} alt={image.alt} layout="responsive" />
             );
@@ -17,4 +18,4 @@ const MDXComponents = {
     code: Code,
 };
 
-export default MDXComponents;
+export default MDComponents;
