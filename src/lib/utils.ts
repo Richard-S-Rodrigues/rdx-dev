@@ -3,7 +3,7 @@ export const formatSlug = (slug) => {
 };
 
 export const formatDate = (date) => {
-    const postDateTemplate = {
+    const postDateTemplate: object = {
         year: "numeric",
         month: "long",
         day: "numeric",

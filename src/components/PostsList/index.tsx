@@ -4,12 +4,20 @@ import { formatDate } from "../../lib/utils";
 
 import styles from "./index.module.css";
 
+interface postDataProps {
+    slug: string;
+    title: string;
+    date: string;
+    tags: string[];
+    summary: string;
+}
+
 const PostsList = ({ posts }) => (
     <ul className={styles.container}>
         {!posts.length && "No posts found."}
 
         {posts.map((post) => {
-            const { slug, title, date, tags, summary } = post;
+            const { slug, title, date, tags, summary }: postDataProps = post;
 
             return (
                 <li key={slug} className={styles.card}>
