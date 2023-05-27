@@ -7,11 +7,6 @@ The blog posts are stored in `src/_posts` as Markdown files. Adding a new Markdo
 
 The images is stored in `public/static/images/blog`, inside specific directories for each post.
 
-## Website
-
-[https://rdx-dev.vercel.app/](https://rdx-dev.vercel.app/)
-
-
 ### Tech Stack
 
 - [TypeScript](https://www.typescriptlang.org/)
